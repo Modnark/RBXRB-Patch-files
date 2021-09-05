@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RBXRB>
+	<!-- March 2007 RBXRB Patch File -->
+	<!-- Updated 9/4/21 @ 8:20 PM EST -->
+	
+	<Meta>
+		<String name="Client Date">March 2007</String>
+		<String name="Build Version">0, 3, 368, 0</String>
+		<String name="Patch Author">Gateway</String>
+	</Meta>
+	
+	<!-- Disable TrustCheck -->
+	<Patch>
+		<PatchInfo>
+			<String name="Title">Disable trust check</String>
+			<String name="Type">Bool</String>
+			<String name="Description">Patches your client to completely skip trust checks for HTTP requests.</String>
+			<String name="Category">Basic Patches</String>
+			<String name="SecurityWarning">This will allow any URL to load in the client. Do not use for projects.</String>
+		</PatchInfo>
+		<PatchData>
+			<Collection value="235">
+				<Offset>14FE7C</Offset>
+			</Collection>
+		</PatchData>
+	</Patch>
+	
+	<!-- Disable untrusted caller -->
+	<Patch>
+		<PatchInfo>
+			<String name="Title">Remove Trusted Caller</String>
+			<String name="Type">Bool</String>
+			<String name="Description">Allows calling of methods that require higher permission.</String>
+			<String name="Category">Basic Patches</String>
+		</PatchInfo>
+		<PatchData>
+			<Collection value="235">
+				<Offset>1BC03A</Offset>
+				<Offset>139358</Offset>
+			</Collection>
+		</PatchData>
+	</Patch>
+	
+	<!-- Change the roblox.com URL -->
+	<Patch>
+		<PatchInfo>
+			<String name="Title">Replace roblox.com</String>
+			<String name="Type">String</String>
+			<String name="Description">Changes roblox.com string to whatever you specify, Max length with tld is 15.</String>
+			<String name="Category">URLs</String>
+		</PatchInfo>
+		<PatchData>
+			<Collection value="LEN">
+				<Offset>14DFF2</Offset>
+			</Collection>
+			<Collection value="STR">
+				<Offset>47EA00</Offset>
+			</Collection>
+			<Collection>
+				<Offset value="0">14E004</Offset>
+				<Offset value="234">14E005</Offset>
+				<Offset value="135">14E006</Offset>
+				<Offset value="0">14E007</Offset>
+			</Collection>
+		</PatchData>
+	</Patch>
+	
+	<!-- Change the robloxwiki.com URL -->
+	<Patch>
+		<PatchInfo>
+			<String name="Title">Replace robloxwiki.com</String>
+			<String name="Type">String</String>
+			<String name="Description">Changes robloxwiki.com string to whatever you specify, Max length with tld is 15.</String>
+			<String name="Category">URLs</String>
+		</PatchInfo>
+		<PatchData>
+			<Collection value="LEN">
+				<Offset>14E062</Offset>
+			</Collection>
+			<Collection value="STR">
+				<Offset>47EA11</Offset>
+			</Collection>
+			<Collection>
+				<Offset value="17">14E072</Offset>
+				<Offset value="234">14E073</Offset>
+				<Offset value="135">14E074</Offset>
+				<Offset value="0">14E075</Offset>
+			</Collection>
+		</PatchData>
+	</Patch>
+</RBXRB>
